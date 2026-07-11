@@ -1,0 +1,682 @@
+/* ===================================
+   Hero Section
+=================================== */
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0f172a;
+}
+
+.hero-section{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+}
+
+/* ===================================
+   Image Box
+=================================== */
+
+.image-box{
+    position:relative;
+    width:380px;
+    height:380px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+}
+
+/* Rotating Gradient Border */
+
+.image-box::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    padding:8px;
+
+    background:linear-gradient(
+        45deg,
+        #00e5ff,
+        #3b82f6,
+        #8b5cf6,
+        #00e5ff
+    );
+
+    animation:spin 8s linear infinite;
+
+    /* Border Only */
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+            mask-composite:exclude;
+
+    filter:drop-shadow(0 0 20px rgba(0,229,255,.55));
+}
+
+/* ===================================
+   Profile Image
+=================================== */
+
+.profile-img{
+    position:relative;
+    z-index:2;
+
+    width:360px;
+    height:360px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+    border:6px solid #0f172a;
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+/* ===================================
+   Hover Effect
+=================================== */
+
+/* Border Stop */
+
+.image-box:hover::before{
+    animation-play-state:paused;
+}
+
+/* Image Zoom */
+
+.image-box:hover .profile-img{
+    transform:scale(1.04);
+    box-shadow:
+        0 0 35px rgba(0,229,255,.45);
+}
+
+/* ===================================
+   Button
+=================================== */
+
+.btn{
+    border-radius:50px;
+}
+
+/* ===================================
+   Animation
+=================================== */
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+/* ===================================
+   Responsive
+=================================== */
+
+@media(max-width:992px){
+
+    .image-box{
+        width:320px;
+        height:320px;
+    }
+
+    .profile-img{
+        width:300px;
+        height:300px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .image-box{
+        width:260px;
+        height:260px;
+    }
+
+    .profile-img{
+        width:240px;
+        height:240px;
+    }
+
+}
+/*about*/
+.about-section{
+    background:#111827;
+}
+
+.about-img{
+    width:350px;
+    height:350px;
+    border-radius:20px;
+    object-fit:cover;
+    border:5px solid #38bdf8;
+}
+
+.info-card{
+    background:#1f2937;
+    padding:20px;
+    border-radius:15px;
+    color:white;
+    transition:.4s;
+    height:100%;
+}
+
+.info-card:hover{
+    transform:translateY(-8px);
+    background:#2563eb;
+}
+
+.info-card h5{
+    color:#38bdf8;
+}
+
+.info-card p{
+    margin:0;
+}
+
+.hero-img{
+    border-radius:50%;
+    border:8px solid #29b6f6;
+    box-shadow:
+    0 0 30px #29b6f6,
+    0 0 70px rgba(41,182,246,.4);
+}
+
+.hero-section h3{
+    min-height:50px;
+    letter-spacing:1px;
+}
+
+/* ==========================
+   Skills Section
+========================== */
+/* ==========================
+   Skills Section
+========================== */
+
+.skills-section{
+    background:#0f172a;
+}
+
+.skill-category-card{
+    background:#1e293b;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:25px;
+    transition:.4s;
+    height:100%;
+}
+
+.skill-category-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,255,255,.18);
+    border-color:#0dcaf0;
+}
+
+.skill-category-card h4{
+    font-weight:700;
+}
+
+.skill-badge{
+    background:#0dcaf0;
+    color:#000;
+    padding:8px 16px;
+    border-radius:50px;
+    font-size:.9rem;
+    font-weight:600;
+    transition:.3s;
+}
+
+.skill-badge:hover{
+    background:#fff;
+    transform:scale(1.08);
+}
+/* ===========================
+   Projects Section
+=========================== */
+
+.projects-section{
+    padding:80px 0;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.dark-theme .projects-section{
+    background:#111827;
+}
+
+.light-theme .projects-section{
+    background:#f8fafc;
+}
+
+.section-title{
+    font-size:2.3rem;
+    font-weight:700;
+}
+
+.dark-theme .section-title{
+    color:#fff;
+}
+
+.light-theme .section-title{
+    color:#111;
+}
+
+/* ===========================
+   Marquee
+=========================== */
+
+.marquee{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+}
+
+.marquee-content{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    width:max-content;
+    animation:scroll 22s linear infinite;
+}
+
+/* Hover karne par scrolling ruk jayegi */
+
+.marquee:hover .marquee-content{
+    animation-play-state:paused;
+}
+
+/* ===========================
+   Image Card
+=========================== */
+
+.project-image-card{
+
+    width:300px;
+    height:180px;
+
+    flex-shrink:0;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+    transition:all .35s ease;
+
+}
+
+/* Sirf card move hoga */
+
+.project-image-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 35px rgba(13,202,240,.25);
+
+}
+
+/* ===========================
+   Image
+=========================== */
+
+.project-image-card img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    background:#f8f9fa;
+
+    padding:8px;
+
+    transition:.3s;
+
+}
+
+/* Image zoom nahi hogi */
+
+.project-image-card:hover img{
+
+    transform:scale(1);
+
+}
+
+/* ===========================
+   Animation
+=========================== */
+
+@keyframes scroll{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    100%{
+        transform:translateX(-50%);
+    }
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:992px){
+
+    .project-image-card{
+
+        width:260px;
+        height:160px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .section-title{
+
+        font-size:2rem;
+
+    }
+
+    .project-image-card{
+
+        width:220px;
+        height:140px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .projects-section{
+
+        padding:60px 0;
+
+    }
+
+    .project-image-card{
+
+        width:200px;
+        height:130px;
+
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.project-image-card{
+
+    width:240px;
+    height:145px;
+
+}
+
+}
+
+/* ==========================
+   Contact
+========================== */
+
+.contact-section{
+    background:#0f172a;
+}
+
+.contact-info{
+    background:#1e293b;
+    padding:30px;
+    border-radius:20px;
+    color:white;
+    height:100%;
+}
+
+.form-control{
+    background:#1f2937;
+    color:white;
+    border:none;
+}
+
+.form-control:focus{
+    background:#1f2937;
+    color:white;
+    box-shadow:none;
+    border:1px solid #38bdf8;
+}
+
+.form-control::placeholder{
+    color:#cbd5e1;
+}
+
+/* ==========================
+   Navbar
+========================== */
+
+.navbar{
+    background: rgba(17,24,39,.8);
+    backdrop-filter: blur(10px);
+}
+
+.nav-link:hover{
+    color:#29b6f6 !important;
+}
+
+
+/* ===============================
+        FOOTER
+==================================*/
+
+.footer-section{
+    background:#020617;
+    color:#cbd5e1;
+}
+
+.footer-logo{
+    color:white;
+    font-weight:bold;
+}
+
+.footer-logo span{
+    color:#38bdf8;
+}
+
+.footer-text{
+    line-height:28px;
+}
+
+.footer-title{
+    color:white;
+    margin-bottom:20px;
+}
+
+.footer-links{
+    list-style:none;
+    padding:0;
+}
+
+.footer-links li{
+    margin-bottom:12px;
+}
+
+.footer-links a{
+    color:#cbd5e1;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#38bdf8;
+    padding-left:8px;
+}
+
+.social-icons{
+    display:flex;
+    gap:15px;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#0f172a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#38bdf8;
+    font-size:22px;
+    transition:.4s;
+    text-decoration:none;
+}
+
+.social-icons a:hover{
+    background:#38bdf8;
+    color:white;
+    transform:translateY(-8px);
+}
+
+.footer-line{
+    border-color:#334155;
+}
+
+.copyright{
+    color:#94a3b8;
+}
+
+/*==========================
+    Back To Top
+===========================*/
+
+.back-to-top{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:55px;
+    height:55px;
+    font-size:22px;
+    z-index:999;
+    transition:.3s;
+}
+
+.back-to-top:hover{
+    transform:translateY(-5px);
+}
+
+/* Dark Theme (default)*/
+
+:root {
+  --bg-color: #0f172a;
+  --text-color: #ffffff;
+}
+
+body.light-theme {
+  --bg-color: #f8fafc;
+  --text-color: #111111;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.hero-section,
+.about-section,
+.skills-section,
+.projects-section,
+.contact-section,
+.footer-section {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Certificate Section */
+
+.certificate-section{
+    padding:80px 0;
+}
+
+.dark-theme .certificate-section{
+    background:#111827;
+}
+
+.light-theme .certificate-section{
+    background:#f8fafc;
+}
+
+.certificate-card{
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    height:100%;
+}
+
+.dark-theme .certificate-card{
+
+    background:#1f2937;
+
+    color:#fff;
+
+}
+
+.light-theme .certificate-card{
+
+    background:#fff;
+
+    color:#222;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.certificate-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(13,202,240,.25);
+
+}
+
+.certificate-img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+.certificate-card h5{
+
+    color:#0dcaf0;
+
+    font-weight:700;
+
+}
