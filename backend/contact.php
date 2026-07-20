@@ -48,12 +48,12 @@ $sql = "INSERT INTO contacts(name,email,subject,message)
 
 $stmt = $conn->prepare($sql);
 
-$stmt->bind_param("ssss",$name,$email,$subject,$message);
+$stmt->bind_param("ssss", $name, $email, $subject, $message);
 
-if(!$stmt->execute()){
+if (!$stmt->execute()) {
     echo json_encode([
-        "status"=>false,
-        "message"=>"Database Error"
+        "status" => false,
+        "message" => "Database Error"
     ]);
     exit;
 }
@@ -64,31 +64,31 @@ if(!$stmt->execute()){
 
 $mail = new PHPMailer(true);
 
-try{
+try {
 
     $mail->isSMTP();
-    $mail->Host='smtp.gmail.com';
-    $mail->SMTPAuth=true;
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
 
-    // Apna Gmail
-    $mail->Username='sudhakumari91280@gmail.com';
+      // Apna Gmail
+    $mail->Username = $mailUsername;
+
+
+    $mail->Password = $mailPassword;
+
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+
+    $mail->setFrom($mailUsername, 'Portfolio Website');
 
     
-    $mail->Password='ntrm bzvq vhln eihw';
-
-    $mail->SMTPSecure=PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port=587;
-
-    $mail->setFrom('sudhakumari91280@gmail.com','Portfolio Website');
-
-    
-    $mail->addAddress('sudhakumari91280@gmail.com');
+    $mail->addAddress($mailUsername);
 
     $mail->isHTML(true);
 
-    $mail->Subject="New Portfolio Contact Message";
+    $mail->Subject = "New Portfolio Contact Message";
 
-    $mail->Body="
+    $mail->Body = "
     <h2>New Contact Form Submission</h2>
 
     <b>Name:</b> {$name}<br><br>
@@ -104,20 +104,16 @@ try{
     $mail->send();
 
     echo json_encode([
-        "status"=>true,
-        "message"=>"Message sent successfully!"
+        "status" => true,
+        "message" => "Message sent successfully!"
     ]);
-
-}catch(Exception $e){
+} catch (Exception $e) {
 
     echo json_encode([
-        "status"=>false,
-        "message"=>"Mail Error : ".$mail->ErrorInfo
+        "status" => false,
+        "message" => "Mail Error : " . $mail->ErrorInfo
     ]);
-
 }
 
 $stmt->close();
 $conn->close();
-
-?>

@@ -107,7 +107,7 @@ export default function Contact() {
                 Feel free to contact me if you have any suitable opportunity.
               </p>
 
-              <p><strong>Email :</strong> sudhkumari91280@gmail.com</p>
+              <p><strong>Email :</strong> sudhk9120@gmail.com</p>
               <p><strong>Phone :</strong> +91 92341 75236</p>
               <p><strong>Location :</strong> Bihar, India</p>
             </div>

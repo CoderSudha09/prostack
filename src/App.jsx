@@ -13,7 +13,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import BackToTop from "./components/BackToTop";
 import Footer from "./components/Footer";
-import Certificates from "./components/Certificates";
+// import Certificates from "./components/Certificates";
 
 import AOS from "aos";
 import { useEffect, useState } from "react";
@@ -29,7 +29,7 @@ export default function App() {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-  // ✅ MAIN FIX HERE
+  //  MAIN FIX HERE
   useEffect(() => {
     document.body.setAttribute("class", theme + "-theme");
   }, [theme]);
@@ -42,7 +42,7 @@ export default function App() {
       <About />
       <Skills />
       <Projects />
-      <Certificates />
+      {/* <Certificates /> */}
       <Contact />
       <BackToTop />
       <Footer />

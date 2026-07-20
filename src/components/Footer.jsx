@@ -47,7 +47,7 @@ export default function Footer() {
 
             <p>
               <i className="bi bi-envelope-fill me-2"></i>
-              sudhkumari91280@gmail.com
+              sudhk9120@gmail.com
             </p>
 
             <p>
@@ -62,7 +62,7 @@ export default function Footer() {
 
             <div className="social-icons mt-4">
 
-              <a href="https://github.com/sudha-coders-dev"><i className="bi bi-github"></i></a>
+              <a href="https://github.com/CoderSudha09"><i className="bi bi-github"></i></a>
 
               <a href="https://www.linkedin.com/in/sudha-gupta-2216353b0"><i className="bi bi-linkedin"></i></a>
 

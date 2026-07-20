@@ -40,7 +40,7 @@ export default function Skills() {
         "Java",
         "C",
         "C++",
-        "Python",
+        // "Python",
        
       ],
     },
