@@ -13,8 +13,4 @@ if ($conn->connect_error) {
 
 $conn->set_charset("utf8");
 
-// Gmail SMTP
-$mailUsername = "sudhakumari91280@gmail.com";
-$mailPassword = "ntrm bzvq vhln eihw";
-
 ?>
