@@ -68,7 +68,7 @@ export default function About() {
               <div className="col-md-6 mb-3">
                 <div className="info-card">
                   <h5>📧 Email</h5>
-                  <p>sudhakumari91280@gmail.com</p>
+                  <p>sudhak9120@gmail.com</p>
                 </div>
               </div>
 
