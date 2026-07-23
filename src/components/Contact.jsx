@@ -109,7 +109,7 @@ export default function Contact() {
 
               <p><strong>Email :</strong> sudhk9120@gmail.com</p>
               <p><strong>Phone :</strong> +91 92341 75236</p>
-              <p><strong>Location :</strong> Bihar, India</p>
+              <p><strong>Location :</strong> Bihar, Muzaffarpur, India</p>
             </div>
           </div>
 
