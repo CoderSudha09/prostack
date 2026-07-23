@@ -61,7 +61,7 @@ export default function About() {
               <div className="col-md-6 mb-3">
                 <div className="info-card">
                   <h5>📍 Location</h5>
-                  <p>Bihar, Muzafferpur, India</p>
+                  <p>Bihar, Muzaffarpur, India</p>
                 </div>
               </div>
 
