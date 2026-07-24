@@ -70,9 +70,7 @@ export default function Footer() {
 
               <a href="#"><i className="bi bi-facebook"></i></a>
               
-              <a href="https://t.me/technologywithsudha8897" target="_blank" rel="noopener noreferrer">
-                <i className="bi bi-telegram"></i>
-              </a>
+              <a href="https://t.me/technologywithsudha8897"><i className="bi bi-telegram"></i></a>
 
             </div>
 
