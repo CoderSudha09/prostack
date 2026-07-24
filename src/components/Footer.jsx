@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    
-        <footer className="footer-section py-4" data-aos="fade-up" >
+
+    <footer className="footer-section py-4" data-aos="fade-up" >
       <div className="container">
 
         <div className="row">
@@ -62,13 +62,17 @@ export default function Footer() {
 
             <div className="social-icons mt-4">
 
-              <a href="https://github.com/CoderSudha09"><i className="bi bi-github"></i></a>
+              <a href="https://github.com/sudha-coders-dev"><i className="bi bi-github"></i></a>
 
               <a href="https://www.linkedin.com/in/sudha-gupta-2216353b0"><i className="bi bi-linkedin"></i></a>
 
               <a href="#"><i className="bi bi-instagram"></i></a>
 
               <a href="#"><i className="bi bi-facebook"></i></a>
+              
+              <a href="https://t.me/technologywithsudha8897" target="_blank" rel="noopener noreferrer">
+                <i className="bi bi-telegram"></i>
+              </a>
 
             </div>
 
